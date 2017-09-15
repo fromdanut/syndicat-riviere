@@ -1,35 +1,35 @@
 <!DOCTYPE html >
 
 <html lang="fr">
-	
+
     <head>
 
         <meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="SIVR communication site">
-        <meta name="author" content="SIVR">
+		<meta name="description" content="Demonstration river association website">
+        <meta name="fromdanut" content="syndicat-riviere">
 		{% load staticfiles %}
 		<!-- favicon a modifier -->
 		<link rel="icon" href={% static "favicon.png" %} />
-		<title>SIVR</title>
-			
+		<title>syndicat-riviere</title>
+
 		<!-- CDN for bootsrap CSS -->
         	<link href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel = "stylesheet">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		
+
 		<!-- Custom CSS for this template -->
 		<link rel="stylesheet" href={% static "css/base.css" %}>
-		
+
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		
+
 		<!-- CDN for js  -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -44,7 +44,7 @@
 			<header class="row">
 				<div class="col-xs-12">
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-					 
+
 					  <!-- Wrapper for slides -->
 					  <div class="carousel-inner">
 							<div class="item active">
@@ -69,7 +69,7 @@
 						</div>
 					</div> <!-- Carousel -->
 				</header>
-					
+
 <!-- the navbar -->
 <nav class="navbar navbar-default">
 	<div class="navbar-header">
@@ -83,17 +83,17 @@
 		<!-- the 3 glyphicones for admin, archives and home symbols-->
 		<a class="navbar-brand" href="{% url 'admin:index' %}" data-toggle="tooltip" title="Administration"><span class="glyphicon glyphicon-user"></span></a>
 		<a class="navbar-brand" href="{% url 'DocumentList' %}" data-toggle="tooltip" title="Archives"><span class="glyphicon glyphicon-folder-open"></span></a>
-		
+
 		<a class="navbar-brand" href="/map/" data-toggle="tooltip" title="Carte du bassin versant"><span class="glyphicon glyphicon-globe"></span></a>
 	</div>
-	
+
 	<div id="navbar" class="navbar-collapse collapse">
 	<ul class="nav navbar-nav">
 
 		{% load flatpages %}
 		{% get_flatpages as flatpages %}
 
-		{% for menuTitle in menuTitles %}			
+		{% for menuTitle in menuTitles %}
 		<li class="dropdown">
 			<a data-toggle="dropdown" href="#">{{ menuTitle.nom }}<b class="caret"></b></a>
 			<ul class="dropdown-menu">
@@ -107,25 +107,25 @@
 				{% endfor %}
 			</ul>
 		</li>
-		{% endfor %}						
-						
+		{% endfor %}
+
 	</ul>
 	</div>
 </nav>
 				</div>
-			
+
         <div class="container">
-			
+
             <div class="row">
 
 				{% block section %}
 				{% endblock %}
-				
+
 				{% include "aside.html" %}
 
 			</div>
 		</div>
-		
+
 		<footer class="container footer">
 			<div class = "row">
 				<div class = "col-sm-7">
@@ -166,9 +166,9 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<p class="text-center icone-8"><a href="https://icons8.com">Icon pack by Icons8</a></p>
-				</div>		
+				</div>
 			</div>
-			
+
 		</footer>
 
 		{# in order to add specific JS for pages with maps on it #}
