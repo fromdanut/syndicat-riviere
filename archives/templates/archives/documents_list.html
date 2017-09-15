@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block section %}
+
+<section class="col-xs-12 col-sm-9">
+	
+		<div class="row">
+
+                    <section class="col-xs-12 table-responsive">
+
+                        <table class="table table-bordered table-striped table-condensed">
+
+                            <caption>
+
+                                <h4 class="text-center"> Les documents du SIVR </h4>
+
+                            </caption>
+
+                            <thead>
+
+                                <tr>
+									<!-- year dropdown menu -->
+                                    <th class="col-xs-2"> 
+										<li class="dropdown unstyled-list">
+											{% if year != '0' %}
+											<a data-toggle="dropdown" href="#">Date : {{year}}<b class="caret"></b></a>
+											{% else %}
+											<a data-toggle="dropdown" href="#">Date<b class="caret"></b></a>
+											{% endif %}
+											<ul class="dropdown-menu">
+												{% for annee in Years %}
+												<li>
+													{# annee.year to get only the year from a date object #}
+													<a href = "{% url 'DocumentList' cat_id=cat_id page=1 year=annee.year %}">{{annee.year}}</a> 
+												</li>
+												{% endfor %}
+														
+												<li>
+													<a href ="{% url 'DocumentList' cat_id=cat_id page=1 year=0 %}">Toutes les années</a>
+												</li>
+											</ul>
+										</li>								
+									</th>
+									<!-- categorie dropdown menu -->
+                                    <th class="col-xs-2">
+										<li class="dropdown unstyled-list">
+											<a data-toggle="dropdown" href="#">{{currentCategorieName}}<b class="caret"></b></a>
+											<ul class="dropdown-menu">
+												{% for categorie in Categories %}
+												<li>
+													{# link to the first page of DocumentList url with the id of the categorie and year from the view ("year=year") #}
+													<a href = "{% url 'DocumentList' cat_id=categorie.id page=1 year=year %}">{{categorie.nom}}</a>
+												</li>
+												{% endfor %}
+												
+												<li>{# link to the first page of DocumentList with special id=0 to fetch every categorie #}
+													<a href ="{% url 'DocumentList' cat_id=0 %}">Toutes les categories</a>
+												</li>
+											</ul>
+										</li>                   
+                                    </th>
+
+                                    <th class="col-xs-8">Titre</th>
+                                    
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+								
+								{% for document in page_obj %}
+
+                                <tr>
+										<td>{{ document.date|date:"d/m/Y"}}</td>
+										
+										<td>{{ document.categorie }}</td>
+										
+										<td>
+										<a href = {{document.document.url}}>
+										<span class="glyphicon glyphicon-eye-open">
+										
+										</span>
+										</a>
+										{{ document.titre }}
+										</td>
+                                
+                                </tr>
+								
+								{% endfor %}
+                            </tbody>
+
+                        </table>
+                        
+                  </div>
+		{% if is_paginated %}
+			{% include "pagination_archives.html" %}
+		{% endif %}
+
+</section>
+{% endblock %}

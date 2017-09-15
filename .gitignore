@@ -52,7 +52,9 @@ coverage.xml
 
 # Django stuff:
 *.log
-local_settings.py
+local.py
+staticfiles/*
+bckup_bdd/*
 
 # Flask stuff:
 instance/

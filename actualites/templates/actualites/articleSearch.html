@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block section %}
+
+<!-- the aside with article is hidden --> 
+<style>
+aside {
+	display:none;
+}
+</style>
+
+<section class="col-xs-12">
+	
+	{% if foundArticles %}
+	<h2 class="text-center">Resultat de la recherche pour : <strong>{{ q }}</strong></h2>
+	{% else %}
+	<h2 class="text-center">Désolé, auncun résultat pour : <strong>{{ q }}</strong></h2>
+	{% endif %}
+
+	<!-- the search bar -->
+	<div class="articleSearchBar">					
+	<form class="navbar-form inline-form" action="{% url 'Actualite_articleSearch' %}" method="get" >
+		<div class="form-group">
+			<input type="text" class="input-sm form-control searchBar" name="q">
+			<button type="submit" class="btn btn-primary btn-sm">
+				<span class="glyphicon glyphicon-eye-open"></span> Search
+			</button>
+		</div>
+	</form>
+	</div>
+	
+	{% for foundArticle in foundArticles %}
+		
+		{# compare it to each article of articles from context_processor#}
+		{% for article in articles %}
+		
+		    {# if they have the same slug, wich has been set to be unique #}
+			{% if article.slug == foundArticle.slug %}
+				
+				{# link to url of the article in Actualite_ArticleList views at the anchor set to slug #}
+				<a href = "{% url 'Actualite_ArticleList' page=article.page %}#{{foundArticle.slug}}" >
+					<h3 class="text-uppercase">{{foundArticle.date | date:"d/m/Y"}} : {{foundArticle.titre}}</h3>
+				</a
+				<p>{{foundArticle.contenu|truncatechars:250 }}</p>
+			{% endif %}
+			
+		{% endfor %}
+
+	{% endfor %}
+
+
+</section>
+{% endblock %}
+
+
+

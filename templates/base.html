@@ -1,0 +1,179 @@
+<!DOCTYPE html >
+
+<html lang="fr">
+	
+    <head>
+
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="SIVR communication site">
+        <meta name="author" content="SIVR">
+		{% load staticfiles %}
+		<!-- favicon a modifier -->
+		<link rel="icon" href={% static "favicon.png" %} />
+		<title>SIVR</title>
+			
+		<!-- CDN for bootsrap CSS -->
+        	<link href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel = "stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		<!-- Custom CSS for this template -->
+		<link rel="stylesheet" href={% static "css/base.css" %}>
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- CDN for js  -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		{# in order to add CDN for CSS and JS for pages with maps on it #}
+		{% block head %}{% endblock %}
+    </head>
+
+	<body>
+
+		<div class="container containerHeader">
+			<header class="row">
+				<div class="col-xs-12">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					 
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner">
+							<div class="item active">
+								  <img src="{% static 'img/carousel/1.png' %}" alt="img/carousel/1.png">
+								  <div class="carousel-caption">
+										<h3 class="text-center">Continuité écologique</h3>
+								  </div>
+							</div>
+							<div class="item">
+								  <img src="{% static 'img/carousel/2.png' %}" alt="img/carousel/2.png">
+								  <div class="carousel-caption">
+										<h3 class="text-left">Gestion des risques</h3>
+								  </div>
+							</div>
+							<div class="item">
+								  <img src="{% static 'img/carousel/3.png' %}" alt="img/carousel/3.png">
+								  <div class="carousel-caption">
+										<h3 class="text-right">Entretien des rivières</h3>
+								  </div>
+								</div>
+							</div>
+						</div>
+					</div> <!-- Carousel -->
+				</header>
+					
+<!-- the navbar -->
+<nav class="navbar navbar-default">
+	<div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/accueil/" data-toggle="tooltip" title="Accueil">SIVR</a>
+		<!-- the 3 glyphicones for admin, archives and home symbols-->
+		<a class="navbar-brand" href="{% url 'admin:index' %}" data-toggle="tooltip" title="Administration"><span class="glyphicon glyphicon-user"></span></a>
+		<a class="navbar-brand" href="{% url 'DocumentList' %}" data-toggle="tooltip" title="Archives"><span class="glyphicon glyphicon-folder-open"></span></a>
+		
+		<a class="navbar-brand" href="/map/" data-toggle="tooltip" title="Carte du bassin versant"><span class="glyphicon glyphicon-globe"></span></a>
+	</div>
+	
+	<div id="navbar" class="navbar-collapse collapse">
+	<ul class="nav navbar-nav">
+
+		{% load flatpages %}
+		{% get_flatpages as flatpages %}
+
+		{% for menuTitle in menuTitles %}			
+		<li class="dropdown">
+			<a data-toggle="dropdown" href="#">{{ menuTitle.nom }}<b class="caret"></b></a>
+			<ul class="dropdown-menu">
+
+				{# fetch only the flatpages wich url's start with the corresponding URLslug #}
+				{% get_flatpages menuTitle.URLslug as Pages %}
+				{% for page in Pages %}
+						<li>
+						<a href = {{ page.url }}>{{page.title}}</a>
+						</li>
+				{% endfor %}
+			</ul>
+		</li>
+		{% endfor %}						
+						
+	</ul>
+	</div>
+</nav>
+				</div>
+			
+        <div class="container">
+			
+            <div class="row">
+
+				{% block section %}
+				{% endblock %}
+				
+				{% include "aside.html" %}
+
+			</div>
+		</div>
+		
+		<footer class="container footer">
+			<div class = "row">
+				<div class = "col-sm-7">
+					<div class="addresse">
+						<p>Contacter nous :</p><br>
+						<div class="wrapper"><i class="fa fa-envelope"></i>
+							<p><a href="mailto:{{contactSIVR.mail}}">{{ contactSIVR.mail }}</a></p>
+						</div>
+						<div class="wrapper"><i class="fa fa-phone"></i>
+							<p><a href="tel:+33{{ contactSIVR.telfix}}">{{ contactSIVR.telfix }}</a> / {{ contactSIVR.telport }}</p>
+						</div>
+						<div class="wrapper"><i class="fa fa-map-marker"></i>
+							<p><a href="https://www.google.fr/maps"> {{ contactSIVR.adresse }}</a></p>
+						</div>
+					</div>
+				</div>
+				<div class = "col-sm-5">
+					<div class="lien">
+						<button class="btn btn-warning btn-lg">
+							<a href = 'http://www.eau-seine-normandie.fr/'>
+						</span></button>
+						<button class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-comment">
+							<a href = 'http://www.federationpeche.fr/60/'>
+						</span></button>
+						<button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-calendar">
+							<a href = 'http://www.onema.fr/'>
+						</span></button>
+						<button class="btn btn-danger btn-lg">
+							<a href = 'http://www.oise.gouv.fr'>
+						</span></button>
+						<button class="btn btn-info btn-lg">
+							<a href = 'http://www.oise.fr/'>
+						</span></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<p class="text-center icone-8"><a href="https://icons8.com">Icon pack by Icons8</a></p>
+				</div>		
+			</div>
+			
+		</footer>
+
+		{# in order to add specific JS for pages with maps on it #}
+		{% block extraJS %}{% endblock %}
+
+	</body>
+
+</html>

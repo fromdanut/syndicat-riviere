@@ -1,0 +1,22 @@
+<div class="row paginationSection">
+
+	<ul class="pagination">
+		{% if page_obj.number != 1 and page_obj.number != 2 %}
+			<li><a href="{% url 'Actualite_ArticleList' page=1 %}">&laquo;</a></li>
+		 {% endif %}
+
+	   {% if page_obj.has_previous %}
+			<li><a href="{% url 'Actualite_ArticleList' page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a></li>
+	   {% endif %}
+	   
+			<li class="active"><a href="#">{{ page_obj.number }}</a></li>
+
+	   {% if page_obj.has_next %}
+			<li><a href="{% url 'Actualite_ArticleList' page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a></li>
+	   {% endif %}
+	   
+	   {% if page_obj.next_page_number < page_obj.paginator.num_pages %}
+			<li><a href="{% url 'Actualite_ArticleList' page=page_obj.paginator.num_pages %}">&raquo;</a></li>
+	   {% endif %}
+	</ul>
+</div>

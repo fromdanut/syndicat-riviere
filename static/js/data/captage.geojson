@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "nom_com": "APREMONT", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.509354979128279, 49.224734835498303 ] ] } },
+{ "type": "Feature", "properties": { "id": 2, "nom_com": "AUMONT-EN-HALATTE", "nbre_capta": 2, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.553014861159508, 49.234052863548889 ] ] } },
+{ "type": "Feature", "properties": { "id": 3, "nom_com": "BARBERY", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.67354188485904, 49.222841998899696 ] ] } },
+{ "type": "Feature", "properties": { "id": 4, "nom_com": "CHAMANT", "nbre_capta": 2, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.623515719256211, 49.220653675710189 ] ] } },
+{ "type": "Feature", "properties": { "id": 5, "nom_com": "CHEVREVILLE", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.854985492010109, 49.118560346029184 ] ] } },
+{ "type": "Feature", "properties": { "id": 6, "nom_com": "EVE", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.705865913821654, 49.089702577308095 ] ] } },
+{ "type": "Feature", "properties": { "id": 7, "nom_com": "FRESNOY-LE-LUAT", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.760974560494879, 49.212933405826661 ] ] } },
+{ "type": "Feature", "properties": { "id": 8, "nom_com": "MONTLOGNON", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.704202750794473, 49.154079937250216 ] ] } },
+{ "type": "Feature", "properties": { "id": 9, "nom_com": "NANTEUIL-LE-HAUDOUIN", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.813140814648157, 49.14265414065639 ] ] } },
+{ "type": "Feature", "properties": { "id": 10, "nom_com": "OGNON", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.642022591233113, 49.241847482379349 ] ] } },
+{ "type": "Feature", "properties": { "id": 11, "nom_com": "SENLIS", "nbre_capta": 2, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.588217153962046, 49.199618527219798 ] ] } },
+{ "type": "Feature", "properties": { "id": 12, "nom_com": "VILLERS-SAINT-FRAMBOURG", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.641155827728136, 49.262522522432235 ] ] } },
+{ "type": "Feature", "properties": { "id": 13, "nom_com": "OTHIS", "nbre_capta": 1, "type": "1 et 2" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 2.662963962546687, 49.077282839644262 ] ] } }
+]
+}

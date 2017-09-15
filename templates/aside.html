@@ -1,0 +1,42 @@
+{% load actualites_extras %}
+
+<aside class="col-xs-12 col-sm-3">
+					
+	<div class="row asideHeader">
+		<h2 class="text-center">Actualités</h2>
+	</div>
+					
+	{% for article in miniArticles %}
+					
+	<div class="row miniArticle">
+		{# the link to the url of the article in Actualite_ArticleList at the anchor set to slug #}
+		<a href = "{% url 'Actualite_ArticleList' page=article.page %}#{{article.slug}}" >
+			<div class="col-xs-2 hidden-sm col-md-3">
+				<img class="icon icons8-Classroom" src={{article.categorie.iconeEncodedImage}} alt = {{article.slug}} />
+			</div>
+
+			<div class="col-xs-10 col-sm-12 col-md-9">
+				<h4>{{article.titre|smart_truncate:35}}</h4>
+			</div>
+
+			<div class="col-xs-12">
+				<p>{{article.date|date:"d/m/Y"}} : {{article.contenu|slice:":50"}}...</p>
+			</div>
+		</a>
+
+	</div>
+
+	{% endfor %}
+					
+	<!-- search bar -->
+							
+	<form class="navbar-form inline-form" action="{% url 'Actualite_articleSearch' %}" method="get" >
+		<div class="form-group">
+			<input type="text" class="input-sm form-control asideSearchBar" name="q">
+			<button type="submit" class="btn btn-primary btn-sm">
+				<span class="glyphicon glyphicon-eye-open"></span> Search
+			</button>
+		</div>
+	</form>
+
+</aside>
