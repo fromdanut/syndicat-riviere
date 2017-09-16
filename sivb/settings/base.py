@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'actualites',
     'archives',
     'map',
+    'django_cleanup', # should go after your apps
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -140,10 +141,10 @@ MEDIA_URL = '/media/'
 
 # Variable for the web display
 
-NUMBER_OF_MINIARTICLE = 6 # for the aside block
+NUMBER_OF_MINIARTICLE = 6   # for the aside block
 
 ACTUALITE_PAGINATION_BY = 2 # for actualites APP
 
 SERIALIZATION_MODULES = {
-    "geojson": "django.contrib.gis.serializers.geojson", 
+    "geojson": "django.contrib.gis.serializers.geojson",
  }
