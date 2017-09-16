@@ -12,7 +12,6 @@ future==0.15.2
 gunicorn==19.6.0
 html5lib==0.999
 lxml==3.5.0
-Magic-file-extensions==0.2
 mercurial==3.7.3
 numpy==1.11.0
 Pillow==3.4.2
