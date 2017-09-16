@@ -14,10 +14,6 @@ DATABASES = settings.DATABASES
 SECRET_KEY = os.environ['SECRET_KEY']
 SESSION_COOKIE_SECURE = True
 
-# Update database configuration with $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Static files (CSS, JavaScript, Images)
@@ -45,3 +41,11 @@ STATIC_ROOT = "https://%s/static" % AWS_S3_CUSTOM_DOMAIN
 
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+# Heroku need to get GDAL and GEOS library for the map app.
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
+GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH')
