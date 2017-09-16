@@ -13,7 +13,7 @@ def get_info_block_nav(request):
        DEBUG : name of menu should'nt be there !
        find a better place --> setting ?
        OR BETTER : should be fetch from DB directly"""
- 
+
 
     menuTitles = [{'nom':'Les rivières', 'URLslug' : '/rivieres/'},
 		  {'nom':'La vallée', 'URLslug' : '/vallee/'},
@@ -25,9 +25,9 @@ def get_info_block_nav(request):
 
 def get_info_articles(request):
     """
-    Set articles here for we need it in every part of the site
+    Set articles here because we need it in every part of the site
     """
-    
+
     # set the articles
     articles = Article.objects.order_by('-date')
 
@@ -45,7 +45,7 @@ def get_info_articles(request):
     return {'miniArticles' : miniArticles,
 	    'articles': articles,
            }
-    
+
 def get_info_footer(request):
 
     """to display contact in the footer"""
@@ -55,4 +55,3 @@ def get_info_footer(request):
 	           'mail':'nom@domain.com', }
 
     return {'contactSIVR': contactSIVR}
-    

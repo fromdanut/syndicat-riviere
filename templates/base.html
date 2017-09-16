@@ -79,7 +79,7 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="/accueil/" data-toggle="tooltip" title="Accueil">SIVR</a>
+		<a class="navbar-brand" href="/accueil/" data-toggle="tooltip" title="Accueil">Accueil</a>
 		<!-- the 3 glyphicones for admin, archives and home symbols-->
 		<a class="navbar-brand" href="{% url 'admin:index' %}" data-toggle="tooltip" title="Administration"><span class="glyphicon glyphicon-user"></span></a>
 		<a class="navbar-brand" href="{% url 'DocumentList' %}" data-toggle="tooltip" title="Archives"><span class="glyphicon glyphicon-folder-open"></span></a>
@@ -126,50 +126,45 @@
 			</div>
 		</div>
 
-		<footer class="container footer">
-			<div class = "row">
-				<div class = "col-sm-7">
-					<div class="addresse">
-						<p>Contacter nous :</p><br>
-						<div class="wrapper"><i class="fa fa-envelope"></i>
-							<p><a href="mailto:{{contactSIVR.mail}}">{{ contactSIVR.mail }}</a></p>
-						</div>
-						<div class="wrapper"><i class="fa fa-phone"></i>
-							<p><a href="tel:+33{{ contactSIVR.telfix}}">{{ contactSIVR.telfix }}</a> / {{ contactSIVR.telport }}</p>
-						</div>
-						<div class="wrapper"><i class="fa fa-map-marker"></i>
-							<p><a href="https://www.google.fr/maps"> {{ contactSIVR.adresse }}</a></p>
-						</div>
-					</div>
-				</div>
-				<div class = "col-sm-5">
-					<div class="lien">
-						<button class="btn btn-warning btn-lg">
-							<a href = 'http://www.eau-seine-normandie.fr/'>
-						</span></button>
-						<button class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-comment">
-							<a href = 'http://www.federationpeche.fr/60/'>
-						</span></button>
-						<button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-calendar">
-							<a href = 'http://www.onema.fr/'>
-						</span></button>
-						<button class="btn btn-danger btn-lg">
-							<a href = 'http://www.oise.gouv.fr'>
-						</span></button>
-						<button class="btn btn-info btn-lg">
-							<a href = 'http://www.oise.fr/'>
-						</span></button>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-xs-12">
-					<p class="text-center icone-8"><a href="https://icons8.com">Icon pack by Icons8</a></p>
-				</div>
-			</div>
-
-		</footer>
+        <footer class="container footer navbar-default" style="border: 1px solid black; background-color:#333333;">
+          <div class="container-fluid">
+            <div class="row" style="padding-top: 10px">
+                {# référence à OpenClassRoom #}
+                <div class="col-xs-12 col-sm-5">
+                    <div class="row">
+                        <p class="text-center"><strong>Projet réalisé dans le cadre du cours</strong><br><br>
+                            "Développez votre site web avec le framework Django"
+                            <a href="https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-django">
+                                Open Class Rooms
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                {# référence au projet sur GitHub #}
+                <div class="col-xs-12 col-sm-2">
+                    <div class="row">
+                        <p class="text-center">
+                            <strong>Voir le projet sur GitHub</strong><br><br>
+                            <a href="https://github.com/fromdanut/syndicat-riviere">
+                                <img class="img-responsive center-block" style="height: 30px;" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="Github logo">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                {# Siter les techno utilisées #}
+                <div class="col-xs-12 col-sm-5">
+                    <div class="row">
+                        <p class="text-center">
+                            <strong>Technologies utilisées :</strong><br>
+                            Langage : <a href="https://www.python.org/"><img class="img-reponsive" style="height: 15px;"  src="{% static 'img/python_logo.png' %}" alt="python_logo"></a><br>
+                            Framework back-end : <a href="https://www.djangoproject.com/"><img class="img-reponsive" style="height: 15px;" src="{% static 'img/django_logo.png' %}" alt="django_logo"></a><br>
+                            Framework front-end : <a href="http://getbootstrap.com/"><img class="img-reponsive" style="height: 15px;" src="http://3.bp.blogspot.com/-_OfUzB5cZYc/VfsuVYmDcSI/AAAAAAAAD2Q/7cPrm2_UUbg/s1600/bootstrap2_logo.png" alt="bootsrap_logo"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 		{# in order to add specific JS for pages with maps on it #}
 		{% block extraJS %}{% endblock %}
