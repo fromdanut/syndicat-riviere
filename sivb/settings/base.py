@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres', #for the 'search' method in the actualite APP
     'django.contrib.sites',
     'django.contrib.flatpages',
-    #'django.contrib.gis',
+    'django.contrib.gis',
     'actualites',
     'archives',
     'map',
