@@ -4,6 +4,7 @@
 
 import os
 from django.conf import settings
+import dj_database_url
 
 # Disable debug mode.
 DEBUG = False
@@ -13,6 +14,7 @@ ALLOWED_HOSTS = ['*']
 DATABASES = settings.DATABASES
 SECRET_KEY = os.environ['SECRET_KEY']
 SESSION_COOKIE_SECURE = True
+
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Static files (CSS, JavaScript, Images)
