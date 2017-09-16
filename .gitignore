@@ -53,7 +53,6 @@ coverage.xml
 # Django stuff:
 *.log
 local.py
-production.py
 staticfiles/*
 bckup_bdd/*
 
