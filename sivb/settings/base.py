@@ -75,7 +75,6 @@ TEMPLATES = [
 		# to get the context data
 		'sivb.context_processors.get_info_block_nav',
 		'sivb.context_processors.get_info_articles',
-		'sivb.context_processors.get_info_footer',
             ],
         },
     },

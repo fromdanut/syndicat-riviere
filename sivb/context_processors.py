@@ -45,13 +45,3 @@ def get_info_articles(request):
     return {'miniArticles' : miniArticles,
 	    'articles': articles,
            }
-
-def get_info_footer(request):
-
-    """to display contact in the footer"""
-    contactSIVR = {'adresse':'11 rue Jean Valjean - 93700 LIBREVILLE',
-		   'telfix':'03 00 00 00',
-		   'telport':'07 00 00 00',
-	           'mail':'nom@domain.com', }
-
-    return {'contactSIVR': contactSIVR}
