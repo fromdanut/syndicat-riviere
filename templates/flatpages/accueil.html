@@ -6,14 +6,12 @@
 
 <section class="col-sm-9">
 
-<h1>{{flatpage.title}}</h1>
+<h1 class="text-center">{{flatpage.title}}</h1>
 
-		<div class="box">
-			<img src= "{% static 'img/accueil.jpg' %}"  class="col-xs-12 col-sm-8 col-md-6 img-responsive img-rounded pull-left no-gap-left" alt="photo-riviere"/>
-		</div>
 
-		<div class="">
+		<p>
 			{{flatpage.content}}
-		</div>
+		</p>
+			<img src= "{% static 'img/accueil.jpg' %}"  class="img-responsive img-rounded img-center" alt="photo-riviere"/>
 </section>
 {% endblock %}

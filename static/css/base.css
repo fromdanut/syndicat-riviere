@@ -1,4 +1,4 @@
-/* COLOR THEME 
+/* COLOR THEME
 
 #0C5AA6 light blue
 #679ED2 dark blue
@@ -101,7 +101,7 @@ nav {
 		padding-left:10px;
 		padding-right:10px;
 		padding-bottom:10px;
-		
+
 	}
 }
 
@@ -153,11 +153,11 @@ aside h2{
 @media (max-width: 767px) {/* the 2 above limits size of the search bar for xs size */
 	.navbar-form .form-control{
 	width:auto;
-	
-	
+
+
 	}
 }
-.inline-form input { 
+.inline-form input {
     display: inline-block;
     width: 150px;
 }
@@ -215,4 +215,9 @@ aside h2{
 	.icone-8{/* space between links and icone8 href */
 	margin-top:10px;
 }
+}
+
+/* Images */
+.img-center {
+    margin:0 auto;
 }
