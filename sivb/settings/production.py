@@ -1,4 +1,6 @@
-# production env for heroku.
+#-*- coding: utf-8 -*-
+
+"""Production settings for Heroku"""
 
 import os
 from django.conf import settings
