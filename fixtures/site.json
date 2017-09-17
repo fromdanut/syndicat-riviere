@@ -3,8 +3,8 @@
         "model" : "sites.site",
         "pk" : 1,
         "fields": {
-            "name"  : "example.com",
-            "domain" : "127.0.0.1:8010"
+            "name"  : "syndicat-riviere.herokuapp",
+            "domain" : "syndicat-riviere.herokuapp.com"
         }
     }
 ]

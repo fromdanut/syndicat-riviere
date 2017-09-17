@@ -10,10 +10,12 @@ import dj_database_url
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['syndicat-riviere.herokuapp.com']
 DATABASES = settings.DATABASES
 SECRET_KEY = os.environ['SECRET_KEY']
 SESSION_COOKIE_SECURE = True
+SITE_ID = 1
+
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Static files (CSS, JavaScript, Images)
