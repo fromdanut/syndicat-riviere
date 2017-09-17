@@ -19,3 +19,4 @@ six==1.10.0
 SOAPpy==0.12.22
 whitenoise==3.2.2
 wstools==0.4.3
+raven>=3
