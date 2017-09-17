@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'archives',
     #'map',
     'django_cleanup', # should go after your apps
+    'raven.contrib.django.raven_compat', # to get error log in production env.
 ]
 
 MIDDLEWARE_CLASSES = [

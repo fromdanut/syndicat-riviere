@@ -15,10 +15,6 @@ DATABASES = settings.DATABASES
 SECRET_KEY = os.environ['SECRET_KEY']
 SESSION_COOKIE_SECURE = True
 
-INSTALLED_APPS = INSTALLED_APPS + (
-    'raven.contrib.django.raven_compat', # to get error log in production env.
-)
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
