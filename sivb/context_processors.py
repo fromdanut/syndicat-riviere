@@ -9,10 +9,12 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def get_info_block_nav(request):
 
-    """to display menu with flatpages
-       DEBUG : name of menu should'nt be there !
-       find a better place --> setting ?
-       OR BETTER : should be fetch from DB directly"""
+    """
+        to display menu with flatpages
+        DEBUG : name of menu should'nt be there !
+        find a better place --> setting ?
+        OR BETTER : should be fetch from DB directly
+    """
 
 
     menuTitles = [{'nom':'Les rivières', 'URLslug' : '/rivieres/'},

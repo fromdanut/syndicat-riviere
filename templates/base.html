@@ -33,9 +33,6 @@
 		<!-- CDN for js  -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-		{# in order to add CDN for CSS and JS for pages with maps on it #}
-		{% block head %}{% endblock %}
     </head>
 
 	<body>
@@ -83,8 +80,6 @@
 		<!-- the 3 glyphicones for admin, archives and home symbols-->
 		<a class="navbar-brand" href="{% url 'admin:index' %}" data-toggle="tooltip" title="Administration"><span class="glyphicon glyphicon-user"></span></a>
 		<a class="navbar-brand" href="{% url 'DocumentList' %}" data-toggle="tooltip" title="Archives"><span class="glyphicon glyphicon-folder-open"></span></a>
-
-		<a class="navbar-brand" href="/map/" data-toggle="tooltip" title="Carte du bassin versant"><span class="glyphicon glyphicon-globe"></span></a>
 	</div>
 
 	<div id="navbar" class="navbar-collapse collapse">
@@ -165,9 +160,6 @@
             </div>
         </div>
     </footer>
-
-		{# in order to add specific JS for pages with maps on it #}
-		{% block extraJS %}{% endblock %}
 
 	</body>
 
