@@ -15,6 +15,7 @@ DATABASES = settings.DATABASES
 SECRET_KEY = os.environ['SECRET_KEY']
 SESSION_COOKIE_SECURE = True
 
+SITE_ID = 1
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Static files (CSS, JavaScript, Images)
