@@ -21,9 +21,14 @@
     font-style: normal;
 }
 
+html {
+  height: 100%;
+}
+
 body {
 	background-image: linear-gradient(0deg, #0C5AA6, #679ED2);
 	font-family:"aaarghnormal";
+    min-height: 100%;
 }
 
 h1 {
