@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^actualites/', include('actualites.urls')),
     url(r'^archives/', include('archives.urls')),
-    #url(r'^map/', include('map.urls')),
+    url(r'^map/', include('map.urls')),
 ]
 
 # in order to display flatpages

@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     #'django.contrib.gis',
     'actualites',
     'archives',
-    #'map',
+    'map',
     'django_cleanup', # should go after your apps
     'raven.contrib.django.raven_compat', # to get error log in production env.
 ]
