@@ -34,4 +34,4 @@ Les fixtures chargés sont le résultat de la commande suivante :
 
 `python manage.py dumpdata flatpages actualites > fixtures/dump-data.json`
 
-Attention : on dump les actualités mais veuiller à ne pas leur attribuer d'image, car elles ne seront pas correctement uploadées lors du loaddata. Pour cette meme raison on ne dump pas l'app archives.
+Attention : on dump les actualités mais veuiller à ne pas leur attribuer d'image, car elles ne seront pas correctement uploadées lors du loaddata. Pour cette même raison on ne dump pas l'app archives.
