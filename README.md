@@ -1,5 +1,6 @@
 # syndicat-riviere
-Basic website demonstration for a river syndicate association
+Basic website demonstration for a river syndicate association.
+
 
 ## Presentation
 
@@ -31,8 +32,6 @@ _Charger les fixtures_
 
 Les fixtures chargés sont le résultat de la commande suivante :
 
-`python manage.py dumpdata --exclude auth --exclude contenttypes --exclude admin --exclude sessions --exclude archives --exclude sites.site -o fixtures/dump-data.json`
+`python manage.py dumpdata flatpages actualites > fixtures/dump-data.json`
 
-- Exclure le site permet de garder le site configuré en production. Attention à n'avoir qu'un site avec l'id 1 (peut nécessiter de mofidier la BDD si d'autre ont été créés entre temps.)
-- Exclure les archives car elles ne seront pas correctement uploadées lors du loaddata.
-- Garder les actualités mais veuiller à ne pas leur attribuer d'image, car elles ne seront pas correctement uploadées lors du loaddata.
+Attention : on dump les actualités mais veuiller à ne pas leur attribuer d'image, car elles ne seront pas correctement uploadées lors du loaddata. Pour cette meme raison on ne dump pas l'app archives.
