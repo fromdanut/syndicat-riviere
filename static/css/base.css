@@ -27,6 +27,8 @@ html {
 
 body {
 	background-image: linear-gradient(0deg, #0C5AA6, #679ED2);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 	font-family:"aaarghnormal";
     min-height: 100%;
 }
