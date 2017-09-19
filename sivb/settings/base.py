@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres', #for the 'search' method in the actualite APP
     'django.contrib.sites',
     'django.contrib.flatpages',
-    #'django.contrib.gis',
+    'django.contrib.gis',
     'actualites',
     'archives',
     'map',
@@ -146,6 +146,6 @@ NUMBER_OF_MINIARTICLE = 6   # for the aside block
 ACTUALITE_PAGINATION_BY = 2 # for actualites APP
 
 
-#SERIALIZATION_MODULES = {
-#    "geojson": "django.contrib.gis.serializers.geojson",
-# }
+SERIALIZATION_MODULES = {
+    "geojson": "django.contrib.gis.serializers.geojson",
+ }
