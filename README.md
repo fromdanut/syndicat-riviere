@@ -5,7 +5,7 @@ Visitez le [site web](https://syndicat-riviere.herokuapp.com/)
 
 ## Présentation
 
-Site de démonstration réalisé en Python avec le Framework Django.
+Site de démonstration réalisé en Python à l'aide du framework Django.
 
 Il contient l'ensemble des fonctionnalités basiques pour un syndicat de rivière :
 
@@ -16,8 +16,8 @@ Il contient l'ensemble des fonctionnalités basiques pour un syndicat de rivièr
 
 ## Fait avec
 
-* [django](https://www.djangoproject.com/) - Le framework utilisé pour l'application web
-
+* [django](https://www.djangoproject.com/) - Le framwork back end
+* [bootstrap](http://getbootstrap.com/docs/3.3/) - Le framework front end
 
 ## Auteur
 
